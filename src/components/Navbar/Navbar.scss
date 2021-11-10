@@ -1,0 +1,12 @@
+.navbar {
+  background-color: pink;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 2rem;
+  color: white;
+
+  &__logo {
+    flex-grow: 1;
+  }
+}

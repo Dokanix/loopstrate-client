@@ -66,13 +66,20 @@ export default function ArtworkCard({ artwork, handleDelete }) {
         </div>
       </Link>
       <div className='card__footer'>
-        <div>
-          {artwork.author && (
-            <Link to={`/users/${artwork.author.name}`}>
+        {artwork.author && (
+          <Link to={`/users/${artwork.author.name}`}>
+            <div className='card__author'>
+              <img
+                className='card__avatar'
+                src={
+                  'http://localhost:3001/img/avatars/' + artwork.author.avatar
+                }
+                alt='Avatar'
+              />
               {artwork.author.name}
-            </Link>
-          )}
-        </div>
+            </div>
+          </Link>
+        )}
         <div>
           {likeCount} <HiHeart className='card__icon' />
         </div>

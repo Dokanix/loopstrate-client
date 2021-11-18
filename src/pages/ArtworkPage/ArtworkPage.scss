@@ -1,0 +1,28 @@
+.artwork {
+  margin: auto;
+  max-width: 50rem;
+
+  &__title {
+    margin-bottom: 0.8rem;
+  }
+
+  &__image {
+    max-height: 50rem;
+
+    border-radius: 0.8rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.8rem;
+    padding: 0 0.8rem;
+  }
+}

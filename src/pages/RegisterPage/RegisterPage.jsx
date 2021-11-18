@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import useError from '../../utils/useError';
 import '../../styles/form.scss';
+import '../../styles/button.scss';
 
 const RegisterPage = () => {
   const navigator = useNavigate();
@@ -33,34 +34,49 @@ const RegisterPage = () => {
 
   return (
     <form onSubmit={handleSubmit} className='form'>
-      <h1>Register</h1>
+      <h1 className='form__title'>Register</h1>
       <div className='form__field'>
-        <label htmlFor='nameInput'>Login</label>
         <input
+          required
+          placeholder='Name'
+          className='form__input'
           value={name}
           onChange={(e) => setName(e.target.value)}
           id='nameInput'
         />
+        <label className='form__label' htmlFor='nameInput'>
+          Username
+        </label>
       </div>
       <div className='form__field'>
-        <label htmlFor='passwordInput'>Password</label>
         <input
+          required
+          placeholder='Password'
+          className='form__input'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           id='passwordInput'
           type='password'
         />
+        <label className='form__label' htmlFor='passwordInput'>
+          Password
+        </label>
       </div>
       <div className='form__field'>
-        <label htmlFor='confirmPasswordInput'>Confirm Password</label>
         <input
+          required
+          placeholder='Confirm Password'
+          className='form__input'
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           id='confirmPasswordInput'
           type='password'
         />
+        <label className='form__label' htmlFor='confirmPasswordInput'>
+          Confirm Password
+        </label>
       </div>
-      <button>Register</button>
+      <button className='button button--primary form__submit'>Register</button>
       <div>{error}</div>
     </form>
   );

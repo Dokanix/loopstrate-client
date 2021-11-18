@@ -1,43 +1,39 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './Navbar.scss';
+import '../../styles/button.scss';
 import useAuth from '../../utils/useAuth';
+import Searchbar from '../Searchbar/Searchbar';
+import Profile from '../Profile/Profile';
 
 export default function Navbar() {
-  const { user, logout } = useAuth();
-  const navigate = useNavigate();
-
-  const handleClick = async () => {
-    logout();
-    navigate('/');
-  };
+  const { user } = useAuth();
 
   return (
     <nav className='navbar'>
       <div className='navbar__logo'>
-        <Link to='/'>Logo</Link>
+        <Link className='navbar__logo' to='/hot'>
+          Loopstrate
+        </Link>
       </div>
-      {user.name ? (
-        <>
-          <div>
-            <Link to='/me'>Profile</Link>
-          </div>
-          <div>
-            <Link onClick={handleClick} to='/'>
-              Logout
+      <Searchbar />
+      <div className='navbar__buttons'>
+        {user.name ? (
+          <>
+            <Profile />
+          </>
+        ) : (
+          <>
+            <Link className='button' to='/login'>
+              Login
             </Link>
-          </div>
-        </>
-      ) : (
-        <>
-          <div>
-            <Link to='/register'>Register</Link>
-          </div>
-          <div>
-            <Link to='/login'>Login</Link>
-          </div>
-        </>
-      )}
+
+            <Link className='button button--primary' to='/register'>
+              Register
+            </Link>
+          </>
+        )}
+      </div>
     </nav>
   );
 }

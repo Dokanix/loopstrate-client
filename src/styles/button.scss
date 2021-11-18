@@ -1,0 +1,21 @@
+.button {
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  transition-duration: 0.2s;
+  transition-property: transform, filter, padding, background-color, box-shadow;
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    transform: translateY(-0.1rem);
+    filter: brightness(0.9);
+    cursor: pointer;
+  }
+
+  &--primary {
+    padding: 0.8rem 3.2rem;
+    background-color: var(--color-primary500);
+    box-shadow: var(--shadow-primary);
+  }
+}

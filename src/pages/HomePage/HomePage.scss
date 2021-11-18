@@ -1,0 +1,11 @@
+.artworks {
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.6rem;
+  }
+
+  &__heading {
+    margin-left: 1.6rem;
+  }
+}

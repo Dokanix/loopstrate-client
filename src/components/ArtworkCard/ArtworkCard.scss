@@ -1,13 +1,94 @@
-.artwork {
-  border-radius: 1rem;
+.card {
+  border-radius: 0.8rem;
+  transition: all 0.2s;
 
   &__image {
-    border-radius: 2rem;
+    border-radius: 0.8rem;
+    box-shadow: var(--shadow-medium);
     overflow: hidden;
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.5) 0%,
+        transparent 50%
+      );
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      opacity: 0;
+      transition: all 0.2s;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+
+    &:hover .card__details {
+      opacity: 1;
+    }
+  }
+
+  &__details {
+    opacity: 0;
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: white;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0.8rem;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  &__button {
+    color: var(--color-red);
+    cursor: pointer;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.8rem;
+    font-size: 2rem;
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0.4rem;
+  }
+
+  &__icon {
+    color: var(--color-gray500);
+    position: relative;
+    top: 0.1rem;
   }
 
   img {
     width: 100%;
     height: 100%;
+  }
+
+  &[deleting='1'] {
+    opacity: 0;
   }
 }

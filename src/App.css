@@ -1,11 +1,46 @@
+@import-normalize;
+
+:root {
+  --color-primary900: hsl(47, 98%, 40%);
+  --color-primary500: hsl(47, 95%, 65%);
+  --color-primary100: hsl(47, 100%, 95%);
+  --color-red: hsl(340, 100%, 65%);
+  --color-gray100: hsl(0, 0%, 95%);
+  --color-gray300: hsl(0, 0%, 75%);
+  --color-gray500: hsl(0, 0%, 40%);
+  --color-font: hsl(47, 100%, 5%);
+
+  --shadow-primary: 0 0.2rem 1.2rem hsla(47, 100%, 46%, 0.7);
+  --shadow-color: 43deg 13% 61%;
+  --shadow-low: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.52),
+    1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.52);
+  --shadow-medium: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.48),
+    1.3px 2.6px 3.3px -1.2px hsl(var(--shadow-color) / 0.48),
+    5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.48);
+  --shadow-high: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.54),
+    2.4px 4.8px 6px -0.6px hsl(var(--shadow-color) / 0.54),
+    5.7px 11.3px 14.2px -1.2px hsl(var(--shadow-color) / 0.54),
+    12.4px 24.9px 31.3px -1.9px hsl(var(--shadow-color) / 0.54),
+    25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.54);
+}
+
 html {
   font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
+  color: var(--color-font);
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  overflow-y: scroll;
+  font-family: Poppins, sans-serif;
   font-size: 1.6rem;
 }
 
@@ -16,4 +51,27 @@ a {
 
 img {
   display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+button {
+  font-family: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 1.2rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary100);
+  border: 2px solid var(--color-primary500);
+  border-radius: 1.6rem;
 }
